@@ -39,13 +39,13 @@ implicit:
 ---
 - summary: |
     Проверка возможности регистрации
-  requirement: |
+requirement: |
     Пользователь должен иметь возможность зарегистрироваться
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
+prerequisites: |
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+test-data: |
     Nickname = Abc Email = ab@ab.com Password = password
-  steps:
+steps:
     - Вводим Nickname
     - Вводим Email
     - Вводим Password
@@ -54,200 +54,68 @@ implicit:
     Пользователь попадает на главную страницу. Авторизация пройдена
     
 - summary: |
-    Проверка входа пользователя с существующими логином и паролем
+    Проверка входа пользователя с существующими емейлом и паролем
   requirement: |
     Пользователь должен иметь возможность авторизоваться по емейлу
   prerequisites: |
-    https://codebattle.hexlet.io/
+    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
   test-data: |
-    Nickname = Abc Email = ab@ab.com Password = password
+    Email = ab@ab.com Password = password
   steps:
-    - Вводим логин
-    - Вводим пароль
-    - Нажимаем кнопку «Войти»
+    - Вводим Email
+    - Вводим Password
+    - Нажимаем кнопку «Submit»
   expected-result: |
     Пользователь попадает на главную страницу. Авторизация пройдена
   
 - summary: |
-    Проверка входа пользователя с несуществующими логином и паролем
+    Проверка входа пользователя с некорректным емейлом
   requirement: |
-    При неправильном логине или пароле пользователь должен получить сообщение об ошибке
+    При неправильном емейле пользователь должен получить сообщение об ошибке
   prerequisites:
-    Открыта страница логина
-  test-data: |
-    Nickname = Abc Email = ab@ab.com Password = password
+    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+ test-data: |
+    Email = ab@ab.comu Password = password
   steps:
-    - Вводим логин
-    - Вводим пароль
-    - Нажимаем кнопку «Войти»
+    - Вводим Email
+    - Вводим Password
+    - Нажимаем кнопку «Submit»
   expected-result: |
-    Появляется сообщение об ошибке
+    Появляется сообщение об ошибке: EMAIL_NOT_FOUND
 
-  
+- summary: |
+    Проверка входа пользователя с некорректным паролем
+  requirement: |
+    При неправильном пароле пользователь должен получить сообщение об ошибке
+  prerequisites:
+    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+ test-data: |
+    Email = ab@ab.com Password = password-
+  steps:
+    - Вводим Email
+    - Вводим Password
+    - Нажимаем кнопку «Submit»
+  expected-result: |
+    Появляется сообщение об ошибке: INVALID_PASSWORD
+
+- summary: |
+    Проверка авторизации пользователя через профиль в Github
+requirement: |
+    Пользователь должен иметь возможность авторизоваться через профиль в Github
+  prerequisites: |
+    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    Email = ab@ab.com Password = password
+  steps:
+    - Вводим Email
+    - Вводим Password
+    - Нажимаем кнопку «Submit»
+  expected-result: |
+    Пользователь попадает на главную страницу. Авторизация пройдена
 
 
 
 ---
-- summary: |
-    Проверка поиска товара по ключевому слову
-  requirement: |
-    Пользователь должен иметь возможность искать товары по ключевому слову
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    Ключевое слово = iphone
-  steps:
-    - Вводим ключевое слово
-  expected-result: |
-    В списке товаров отображаются все товары, содержащие данное ключевое слово.
-
-- summary: |
-    Проверка поиска товара по категории
-  requirement: |
-    Пользователь должен иметь возможность искать товары по категории
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    Категория = laptops
-  steps:
-    - Выбираем категорию
-  expected-result: |
-    В списке товаров отображаются все товары, относящиеся к данной категории.
-
-- summary: |
-    Проверка работы фильтра товаров по цене 1
-  requirement: |
-    Пользователь должен иметь возможность фильтровать товары по цене
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    Price from = empty Price to = 1000
-  steps:
-    - Вводим диапазон цены
-  expected-result: |
-    В списке товаров отображаются все товары, чья цена попадает в указанный диапазон.
-    
-- summary: |
-    Проверка работы фильтра товаров по цене 2
-  requirement: |
-    Пользователь должен иметь возможность фильтровать товары по цене
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    Price from = -8 Price to = empty
-  steps:
-    - Вводим диапазон цены
-  expected-result: |
-    Поле не дает ввести отрицательное значение или появляется предупреждение о некорректном значении.
-    
-- summary: |
-    Проверка работы фильтра товаров по цене 3
-  requirement: |
-    Пользователь должен иметь возможность фильтровать товары по цене
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    Price from = empty Price to = -8
-  steps:
-    - Вводим диапазон цены
-  expected-result: |
-    Поле не дает ввести отрицательное значение или появляется предупреждение о некорректном значении.
-
-- summary: |
-    Проверка работы фильтра товаров по наличию
-  requirement: |
-    Пользователь должен иметь возможность фильтровать товары по наличию
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    empty
-  steps:
-    - Нажимаем галочку 'In Stock'
-  expected-result: |
-    В списке товаров отображаются все товары, которые есть в наличии.    
-
-- summary: |
-    Проверка работы фильтра товаров по бренду
-  requirement: |
-    Пользователь должен иметь возможность фильтровать товары по бренду
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    empty
-  steps:
-    - Нажимаем галочку любого бренда
-  expected-result: |
-    В списке товаров отображаются все товары, которые относятся к данному бренду.  
-
-- summary: |
-    Просмотр товара
-  requirement: |
-    Пользователь должен иметь возможность просматривать товары и просматривать подробную информацию о товаре
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    Товар = iPhone 9
-  steps:
-    - Нажимаем на товар
-  expected-result: |
-    Открывается страница товара и отображается подробная информация о товаре.
-
-- summary: |
-    Добавление товара в корзину
-  requirement: |
-    Пользователь должен иметь возможность добавлять товары в корзину
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    Товар = iPhone 9
-  steps:
-    - Нажимаем кнопку Add to cart
-    - Переходим в Cart
-  expected-result: |
-    В корзине отображается добавленный товар. 
-    
-- summary: |
-    Добавление разных товаров в корзину
-  requirement: |
-    Пользователь должен иметь возможность добавлять несколько разных товаров в корзину
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    Товар 1 = iPhone 9; Товар 2 = iPhone X
-  steps:
-    - Добавляем в корзину Товар 1 и Товар 2
-    - Переходим в Cart
-  expected-result: |
-    В корзине отображаются добавленные товары, общая сумма отображается корректно.    
-    
-- summary: |
-    Добавление нескольких одинаковых товаров разного количества в корзину
-  requirement: |
-    Пользователь должен иметь возможность добавлять несколько одинаковых товаров разного количества в корзину
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    Товар = iPhone 9
-  steps:
-    - Нажимаем кнопку Add to cart 2 раза
-    - Переходим в Cart
-  expected-result: |
-    В корзине отображается добавленный товар в количестве 2, общая сумма отображается корректно.   
-
-- summary: |
-    Просмотр содержимого корзины
-  requirement: |
-    Пользователь должен иметь возможность просматривать содержимое корзины
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    Товар = iPhone 9
-  steps:
-    - Добавляем товар в корзину
-    - Переходим в Cart
-  expected-result: |
-    Отображается содержимое корзины. В корзине появился добавленный товар   
-
 - summary: |
     Проверка работы сайта в Chrome
   requirement: |
