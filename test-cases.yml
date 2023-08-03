@@ -12,6 +12,20 @@
     - 
   expected-result: |
     Игра создана .... .
+
+- summary: | 
+    Проверка работы версии сайта на русском языке
+  requirement: |
+    Сайт должен быть доступен в версии на русском языке
+  prerequisites: |
+    Открыта главная страница https://hexlet-products-store.vercel.app/
+  test-data: |
+    empty
+  steps:
+    - Открываем меню 'Language'
+    - Выбираем 'Russian'
+  expected-result: |
+    Разделы меню, названия и текстовые описания отображаются на русском языке
 ---
 functional:
   - Есть возможность создать игру самому, ждать соперника или послать ссылку кому-нибудь конкретному
@@ -32,7 +46,18 @@ non-functional:
   - Сайт должен быть протестирован на совместимость с последними версиями браузеров
   - Сайт должен быть способен обрабатывать большое количество трафика, а именно 1000 одновременных пользователей
 
-
+- summary: |
+    Проверка работы сайта на смартфоне
+  requirement: |
+    Сайт должен быть доступен на различных устройствах
+  prerequisites: |
+    Открыта главная страница https://hexlet-products-store.vercel.app/
+  test-data: |
+    Устройство: Apple iPhone 14
+  steps:
+    - Открываем сайт на указанном устройстве
+  expected-result: |
+    Сайт работает корректно. 
 
 - summary: |
     Проверка работы сайта в Chrome
@@ -61,19 +86,6 @@ non-functional:
     Сайт работает корректно.    
 
 - summary: |
-    Проверка работы сайта на компьютере
-  requirement: |
-    Сайт должен быть доступен на различных устройствах
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    Устройство: ноутбук
-  steps:
-    - Открываем сайт на указанном устройстве
-  expected-result: |
-    Сайт работает корректно.  
-
-- summary: |
     Проверка работы сайта на смартфоне
   requirement: |
     Сайт должен быть доступен на различных устройствах
@@ -84,25 +96,10 @@ non-functional:
   steps:
     - Открываем сайт на указанном устройстве
   expected-result: |
-    Сайт работает корректно.  
-    
-- summary: | 
-    Проверка работы версии сайта на русском языке
-  requirement: |
-    Сайт должен быть доступен в версии на русском языке
-  prerequisites: |
-    Открыта главная страница https://hexlet-products-store.vercel.app/
-  test-data: |
-    empty
-  steps:
-    - Открываем меню 'Language'
-    - Выбираем 'Russian'
-  expected-result: |
-    Разделы меню, названия и текстовые описания отображаются на русском языке
+    Сайт работает корректно. 
 
-
-
-
+---
+---
 ---
 implicit:
   - Пользователь должен иметь возможность зарегистрироваться
@@ -117,7 +114,7 @@ implicit:
   prerequisites: |
     Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
-    Nickname = Abc Email = ab@ab.com Password = password
+    Nickname = Abdullah Email = ab@ab.com Password = password
   steps:
     - Вводим Nickname
     - Вводим Email
