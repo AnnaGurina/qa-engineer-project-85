@@ -1,0 +1,191 @@
+
+
+
+
+
+
+
+
+---
+test-cases:
+- summary: |
+    Проверка поиска товара по ключевому слову
+  status: fail
+
+- summary: |
+    Проверка поиска товара по категории
+  status: pass
+  
+- summary: | 
+    Проверка работы фильтра товаров по цене 1
+  status: fail
+  
+- summary: |
+    Проверка работы фильтра товаров по цене 2
+  status: fail
+  
+- summary: |
+    Проверка работы фильтра товаров по цене 3
+  status: fail
+    
+- summary: |
+    Проверка работы фильтра товаров по наличию
+  status: fail
+  
+- summary: |
+    Проверка работы фильтра товаров по бренду
+  status: fail
+  
+- summary: |
+    Просмотр товара и подробной информации о товаре
+  status: pass
+
+- summary: |
+    Добавление товара в корзину
+  status: pass
+
+- summary: |
+    Добавление разных товаров в корзину
+  status: pass
+
+- summary: |
+    Добавление нескольких одинаковых товаров разного количества в корзину
+  status: pass
+  
+- summary: |
+    Просмотр содержимого корзины
+  status: pass
+
+- summary: |
+    Проверка работы сайта в Chrome
+  status: pass
+
+- summary: |
+    Проверка работы сайта в Firefox
+  status: pass
+
+- summary: |
+    Проверка работы сайта на компьютере
+  status: pass
+
+- summary: | 
+    Проверка работы сайта на смартфоне
+  status: fail
+
+- summary: |
+    Удаление товара из корзины
+  status: pass
+  
+- summary: |
+    Очистка корзины
+  status: pass
+
+- summary: |
+    Заказ товара
+  status: fail
+
+- summary: |
+    Навигация по страницам каталога
+  status: pass
+
+- summary: |
+    Переход в категорию товаров по хештегу
+  status: pass
+
+- summary: |
+    Проверка работы версии сайта на русском языке
+  status: fail
+  
+bugreports:
+- summary: |
+    Не работает поиск товара по ключевому слову
+  environment: |
+    Google Chrome   Версия 113.0.5672.127 (Официальная сборка), (64 бит)
+    Windows 10 Pro
+  steps-to-reproduce: |
+    1. Зайти на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Ввести в поле поиска 'phone'
+    3. Нажать Enter
+  expected-result: |
+    В списке товаров отображаются все товары, в названии или описании которых указано искомое слово
+  actual-result: |
+    Список товаров не изменяется
+    
+- summary: |
+    Не работает фильтр товаров по цене
+  environment: |
+    Google Chrome   Версия 113.0.5672.127 (Официальная сборка), (64 бит)
+    Windows 10 Pro
+  steps-to-reproduce: |
+    1. Зайти на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Ввести диапазон цены: от 0 до 1000
+  expected-result: |
+    В списке товаров отображаются все товары, чья цена попадает в указанный диапазон
+  actual-result: |
+    Список товаров не изменяется  
+    
+- summary: |
+    Поле цены Price from позволяет ввести отрицательное значение
+  environment: |
+    Google Chrome   Версия 113.0.5672.127 (Официальная сборка), (64 бит)
+    Windows 10 Pro
+  steps-to-reproduce: |
+    1. Зайти на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Выбрать Price from = -8 Price to = empty
+  expected-result: |
+    Поле не дает ввести отрицательное значение или появляется предупреждение о некорректном значении
+  actual-result: |
+    Поле цены позволяет ввести отрицательное значение. Список товаров изменяется по непонятному признаку
+    
+- summary: |
+    Не работает фильтр товаров по наличию
+  environment: |
+    Google Chrome   Версия 113.0.5672.127 (Официальная сборка), (64 бит)
+    Windows 10 Pro
+  steps-to-reproduce: |
+    1. Зайти на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Убрать галочку In Stock
+  expected-result: |
+    В списке товаров отображаются все товары, которые не в наличии. Они не совпадают с теми, которые отображаются при нажатии галочки In Stock
+  actual-result: |
+    Список товаров изменяется, но некоторые товары отображаются как с использованием фльтра, так и без
+
+- summary: |
+    Не работает фильтр товаров по бренду
+  environment: |
+    Google Chrome   Версия 113.0.5672.127 (Официальная сборка), (64 бит)
+    Windows 10 Pro
+  steps-to-reproduce: |
+    1. Зайти на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Нажать галочку для бренда Apple
+  expected-result: |
+    В списке товаров отображаются все товары указанного бренда
+  actual-result: |
+    Список товаров не изменяется
+    
+- summary: |
+    Отсутствуют кнопки пролистывания страниц
+  environment: |
+    Google Chrome   Версия 113.0.5672.127 (Официальная сборка), (64 бит)
+    Windows 10 Pro
+  steps-to-reproduce: |
+    1. Зайти на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+  expected-result: |
+    Есть кнопки пролистывания страниц Next и Previous
+  actual-result: |
+    Отсутствуют кнопки пролистывания страниц
+    
+- summary: |
+    Некорректно работает версия сайта на смартфоне
+  environment: |
+    iPhone 14
+    iOS 16.3.1
+  steps-to-reproduce: |
+    1. Зайти на страницу https://products-store-git-v2bugfixes-hexlet-components.vercel.app  
+    2. Добавить товар в корзину
+    3. Перейти в корзину
+  expected-result: |
+    Все элементы страницы отображаются корректно, размеры полей не искажены, поля не перекрывают друг друга
+  actual-result: |
+    Поля фильтров и категорий находятся внизу страницы, после товаров, что очень неудобно для использования
+    Скриншот (4).png; Скриншот (5).png
