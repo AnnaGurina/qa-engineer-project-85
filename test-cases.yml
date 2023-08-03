@@ -39,13 +39,13 @@ implicit:
 ---
 - summary: |
     Проверка возможности регистрации
-requirement: |
+  requirement: |
     Пользователь должен иметь возможность зарегистрироваться
-prerequisites: |
+  prerequisites: |
     Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-test-data: |
+  test-data: |
     Nickname = Abc Email = ab@ab.com Password = password
-steps:
+  steps:
     - Вводим Nickname
     - Вводим Email
     - Вводим Password
@@ -74,7 +74,7 @@ steps:
     При неправильном емейле пользователь должен получить сообщение об ошибке
   prerequisites:
     Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
- test-data: |
+  test-data: |
     Email = ab@ab.comu Password = password
   steps:
     - Вводим Email
@@ -89,7 +89,7 @@ steps:
     При неправильном пароле пользователь должен получить сообщение об ошибке
   prerequisites:
     Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
- test-data: |
+  test-data: |
     Email = ab@ab.com Password = password-
   steps:
     - Вводим Email
@@ -100,7 +100,7 @@ steps:
 
 - summary: |
     Проверка авторизации пользователя через профиль в Github
-requirement: |
+  requirement: |
     Пользователь должен иметь возможность авторизоваться через профиль в Github
   prerequisites: |
     Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
