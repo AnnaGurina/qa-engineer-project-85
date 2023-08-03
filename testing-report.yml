@@ -1,0 +1,94 @@
+
+
+
+
+
+
+
+- summary: |
+    Проверка поиска товара по ключевому слову
+  status: pass
+
+- summary: |
+    Проверка поиска товара по категории
+  status: pass
+  
+- summary: |
+    Проверка работы фильтра товаров по цене 1
+  status: pass
+  
+- summary: |
+    Проверка работы фильтра товаров по цене 2
+  status: fail
+  
+- summary: |
+    Проверка работы фильтра товаров по цене 3
+  status: fail
+  
+- summary: |
+    Проверка работы фильтра товаров по наличию
+  status: pass
+  
+- summary: |
+    Проверка работы фильтра товаров по бренду
+  status: pass
+
+- summary: |
+    Просмотр товара и подробной информации о товаре
+  status: pass
+
+- summary: |
+    Добавление товара в корзину
+  status: pass
+
+- summary: |
+    Добавление разных товаров в корзину
+  status: pass
+
+- summary: |
+    Добавление нескольких одинаковых товаров разного количества в корзину
+  status: pass
+  
+- summary: |
+    Просмотр содержимого корзины
+  status: pass
+
+- summary: |
+    Проверка работы сайта в Chrome
+  status: pass
+
+- summary: |
+    Проверка работы сайта в Firefox
+  status: pass
+
+- summary: |
+    Проверка работы сайта на компьютере
+  status: pass
+
+- summary: |
+    Проверка работы сайта на смартфоне
+  status: fail
+
+- summary: |
+    Удаление товара из корзины
+  status: pass
+
+- summary: |
+    Очистка корзины
+  status: pass
+
+- summary: |
+    Заказ товара
+  status: fail
+
+- summary: |
+    Навигация по страницам каталога
+  status: pass
+
+- summary: |
+    Переход в категорию товаров по хештегу
+  status: fail
+
+- summary: |
+    Проверка работы версии сайта на русском языке
+  status: fail
