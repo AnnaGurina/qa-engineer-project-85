@@ -1,10 +1,53 @@
 
-Notifications
+Notifications: 
+NEW!
+--
+
 Отсутствие валидации емейла
+
+Bug: Отсутствует подтверждение Email после регистрации нового пользователя. #1378
+https://github.com/hexlet-codebattle/codebattle/issues/1378
+4 msg
+
+Bug: Не приходит письмо на email об успешной регистрации нового пользователя. #1375
+https://github.com/hexlet-codebattle/codebattle/issues/1375
+2 msg
+--
+
+Bug: пользователь может зарегистрировать аккаунт на некорректный адрес электронной почты #1267
+https://github.com/hexlet-codebattle/codebattle/issues/1267
+4 msg
+
+Bug: Есть возможность создать аккаунт с несуществующим адресом почты #1391
+https://github.com/hexlet-codebattle/codebattle/issues/1391
+13 msg
+--
+
+Bug: Отсутствует сообщение об успешной аутентификации пользователя при входе по email #1541
+https://github.com/hexlet-codebattle/codebattle/issues/1541
+--
+
+Enhancement-proposal: Добавить возможность смены привязанного e-mail #1283
+https://github.com/hexlet-codebattle/codebattle/issues/1283
+
+Bug: Ошибка отображения главной страницы при авторизации с восстановленным паролем. #1218
+https://github.com/hexlet-codebattle/codebattle/issues/1218
+
+Bug: Нет автоматического перехода страницу авторизации после восстановления пароля #1322
+https://github.com/hexlet-codebattle/codebattle/issues/1322
+
+Bug: Невозможно восстановить пароль по существующему Email #1307
+https://github.com/hexlet-codebattle/codebattle/issues/1307
+
+
+
+
+
+
+
+--
+
 Удобство на моб экране
-
-
-
 
 
 ---
