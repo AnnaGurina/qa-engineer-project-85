@@ -58,9 +58,28 @@ https://github.com/hexlet-codebattle/codebattle/issues/1495
 Bug: Текст не помещается в полях формы в Settings #1511
 https://github.com/hexlet-codebattle/codebattle/issues/1511
 
+
 Bug: Значения выходят за поля формы #1512
 https://github.com/hexlet-codebattle/codebattle/issues/1512
 
+Bug: Страничка информации выбранного турнира не адаптивна к масштабируемости #1486
+https://github.com/hexlet-codebattle/codebattle/issues/1486
+
+
+
+
+Bug: В блоке "Create a new tournament" не выровнены поля ввода на мобильных устройствах #1551
+https://github.com/hexlet-codebattle/codebattle/issues/1551
+CLOSED - CHECK
+
+
+
+
+Bug: Неадаптированное отображение #1441 (поля формы)
+https://github.com/hexlet-codebattle/codebattle/issues/1441
+
+НЕ могу выделить текст
+НЕ All tests passed нужно сделать прокрутку
 
 
 ---
@@ -74,9 +93,12 @@ issues:
 
 
 
+РЕШЕН, но не закрыт:
+https://github.com/hexlet-codebattle/codebattle/issues/1309
 
 
-  
+Enhancement-proposal
+
 
 
 
