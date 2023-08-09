@@ -49,11 +49,29 @@ https://github.com/hexlet-codebattle/codebattle/issues/1307
 
 Удобство на моб экране
 
+Bug: Окно со смайлами в чате вылезает за экран (мобильная версия) #1290
+https://github.com/hexlet-codebattle/codebattle/issues/1290
 
+Bug: Нет адаптации на мобильных устройствах на страничке профиля, в разделе статистики #1495
+https://github.com/hexlet-codebattle/codebattle/issues/1495
+
+Bug: Текст не помещается в полях формы в Settings #1511
+https://github.com/hexlet-codebattle/codebattle/issues/1511
+
+Bug: Значения выходят за поля формы #1512
+https://github.com/hexlet-codebattle/codebattle/issues/1512
+
+
+
+---
+
+ШАБЛОН
 ---
 issues:
   - url: "https://github.com/hexlet-codebattle/codebattle/issues/1202"
   - url: "https://github.com/hexlet-codebattle/codebattle/issues/1173"
+
+
 
 
 
@@ -259,19 +277,7 @@ issues:
   actual-result: |
     Дизайн не оптимизирован под смартфон: рамки полей перекрывают друг друга, отсуствуют некоторые пробелы, поле для цены слишком маленькое, в корзине текст выходит за рамку поля цены.
     Скриншот (1).png; Скриншот (2).png
-
-- summary: |
-    Отсутствует возможность регистрации и авторизации
-  environment: |
-    Google Chrome   Версия 113.0.5672.127 (Официальная сборка), (64 бит)
-    Windows 10 Pro
-  steps-to-reproduce: |
-    1. Зайти на страницу https://hexlet-products-store.vercel.app/
-  expected-result: |
-    На сайте присутствует возможность регистрации и авторизации
-  actual-result: |
-    Возможность регистрации и авторизации отсутствует
-    
+ 
 - summary: |
     Некорректно работает версия сайта на русском языке
   environment: |
