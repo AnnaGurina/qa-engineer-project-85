@@ -29,17 +29,10 @@ https://github.com/hexlet-codebattle/codebattle/issues/1495
 Bug: Текст не помещается в полях формы в Settings #1511
 https://github.com/hexlet-codebattle/codebattle/issues/1511
 
-
-Bug: Значения выходят за поля формы #1512
-Tournament
+Bug: Значения выходят за поля формы #1512 Tournament
 https://github.com/hexlet-codebattle/codebattle/issues/1512
 
-
-
-Bug: Страничка информации выбранного турнира не адаптивна к масштабируемости #1486
-https://github.com/hexlet-codebattle/codebattle/issues/1486
-
-Bug: Неадаптированное отображение #1441 (поля формы)
+Bug: Неадаптированное отображение #1441 (Lobby/Tournaments/Completed Game нужно скроллить по горизонтали)
 https://github.com/hexlet-codebattle/codebattle/issues/1441
 
 -----
