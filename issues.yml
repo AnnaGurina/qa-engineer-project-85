@@ -4,53 +4,37 @@ issues:
   - url: "https://github.com/hexlet-codebattle/codebattle/issues/1581"
   Отсутствует подтверждения емейла пользователя при регистрации
   - url: "https://github.com/hexlet-codebattle/codebattle/issues/1378"
+  Bug: Есть возможность создать аккаунт с несуществующим адресом почты #1391
+  - url: "https://github.com/hexlet-codebattle/codebattle/issues/1391"
   
   - url: "_"
   - url: "_"
   - url: "_"
-  - url: "_"
 
 
---
-Bug: пользователь может зарегистрировать аккаунт на некорректный адрес электронной почты #1267
-https://github.com/hexlet-codebattle/codebattle/issues/1267
-4 msg
 
-Bug: Есть возможность создать аккаунт с несуществующим адресом почты #1391
-https://github.com/hexlet-codebattle/codebattle/issues/1391
-13 msg
+Bug: Нет автоматического перехода страницу авторизации после восстановления пароля #1322
+https://github.com/hexlet-codebattle/codebattle/issues/1322
 
 - summary: |
-    Отсутствует подтверждения емейла пользователя при регистрации 
+    Отсутствует валидация емейла пользователя при регистрации (проверка на то, что он существует)
   environment: |
     Google Chrome   Версия 115.0.5790.171 (Официальная сборка), (64 бит)
     Windows 10 Pro  Версия 10.0.19045 Сборка 190145
   steps-to-reproduce: |
     1. Зайти на страницу регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-    2. Ввести Nickname = bur Email = bursishka@mail.ru Password = password Password = password
+    2. Ввести Nickname = Abdullah Email = ab@ab.com Password = password Password = password
     3. Нажать 'Submit'
   expected-result: |
-    Пользователь попадает на главную страницу. Появляется сообщение о том, что на емейл пришло письмо со ссылкой для подтверждения емейла. 
-    На емейл пришло письмо со ссылкой для подтверждения. При нажатии на ссылку пользователь попадает на главную страницу. Появляется сообщение о том, что емейл подтвержден.
-    Профиль создан, авторизация пройдена.
-    В отсутствие подтверждения емейла профиль не создается.
+    Появляется сообщение о том, что емейл невалидный/не существует.
+    Регистрация не завершается.
   actual-result: |
-    Пользователь попадает на главную страницу. 
-    На емейл не приходит письмо со ссылкой для подтверждения. 
-    Профиль создан, авторизация пройдена.
-
---
-Bug: Отсутствует сообщение об успешной аутентификации пользователя при входе по email #1541
-https://github.com/hexlet-codebattle/codebattle/issues/1541
---
-Enhancement-proposal: Добавить возможность смены привязанного e-mail #1283
-https://github.com/hexlet-codebattle/codebattle/issues/1283
-
+    Регистрация завершается успешно.
+    
 Bug: Ошибка отображения главной страницы при авторизации с восстановленным паролем. #1218
 https://github.com/hexlet-codebattle/codebattle/issues/1218
 
-Bug: Нет автоматического перехода страницу авторизации после восстановления пароля #1322
-https://github.com/hexlet-codebattle/codebattle/issues/1322
+
 
 
 --
@@ -82,6 +66,13 @@ CLOSED - CHECK
 Bug: Неадаптированное отображение #1441 (поля формы)
 https://github.com/hexlet-codebattle/codebattle/issues/1441
 
+--
+Bug: Отсутствует сообщение об успешной аутентификации пользователя при входе по email #1541
+https://github.com/hexlet-codebattle/codebattle/issues/1541
+
+--
+Enhancement-proposal: Добавить возможность смены привязанного e-mail #1283
+https://github.com/hexlet-codebattle/codebattle/issues/1283
 
 --
 РЕШЕН, но не закрыт:
@@ -92,8 +83,28 @@ https://github.com/hexlet-codebattle/codebattle/issues/1309
 Bug: Невозможно восстановить пароль по существующему Email #1307
 https://github.com/hexlet-codebattle/codebattle/issues/1307
 
+Bug: пользователь может зарегистрировать аккаунт на некорректный адрес электронной почты #1267
+https://github.com/hexlet-codebattle/codebattle/issues/1267
+В данном случае тема про корректность емейла, т.е. отсутствие недопустимых символов, правильный формат, но не то, что он существует.
+Именно эта валидация сделана
+
 
 ---
+- summary: |
+    Отсутствует валидация емейла пользователя при регистрации (проверка на то, что он существует)
+  environment: |
+    Google Chrome   Версия 115.0.5790.171 (Официальная сборка), (64 бит)
+    Windows 10 Pro  Версия 10.0.19045 Сборка 190145
+  steps-to-reproduce: |
+    1. Зайти на страницу регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
+    2. Ввести Nickname = Abdullah Email = ab@ab.com Password = password Password = password
+    3. Нажать 'Submit'
+  expected-result: |
+    Появляется сообщение о том, что емейл невалидный/не существует.
+    Регистрация не завершается.
+  actual-result: |
+    Регистрация завершается успешно.
+    
 - summary: |
     Пользователю доступно окно для отправлений сообщений в чате на канале Notification, предназначенном для системных сообщений 
   environment: |
