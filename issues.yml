@@ -18,32 +18,28 @@ issues:
   - url: "https://github.com/hexlet-codebattle/codebattle/issues/1511"
   Значения выходят за поля формы. Tournament
   - url: "https://github.com/hexlet-codebattle/codebattle/issues/1512"
-  - url: "_"
-  
+  Неадаптированное отображение #1441 (Lobby/Tournaments/Completed Game нужно скроллить по горизонтали)
+  - url: "https://github.com/hexlet-codebattle/codebattle/issues/1441"
+  Нельзя выделить и скопировать текст кода в игре в мобильной версии
+  - url: "создать"
 ---
-4. Bug: Значения выходят за поля формы #1512 Tournament
-https://github.com/hexlet-codebattle/codebattle/issues/1512
-
-5. Bug: Неадаптированное отображение #1441 (Lobby/Tournaments/Completed Game нужно скроллить по горизонтали)
-https://github.com/hexlet-codebattle/codebattle/issues/1441
-
 6. NEW
 НЕ могу выделить и копировать текст в моб версии
 
 ---
 - summary: |
-    Значения в разделе Tournaments выходят за рамки полей в мобильной версии
+    Нельзя выделить и скопировать текст кода в игре в мобильной версии
   environment: |
     Google Chrome   Версия 115.0.5735.124 (Официальная сборка), (64 бит)
     iPhone 14
   steps-to-reproduce: |
     1. Зайти на страницу https://codebattle.hexlet.io/
     2. Авторизоваться
-    3. Нажать на кнопку профиля и выбрать 'Settings'
+    3. 
   expected-result: |
-    Текст в разделе Settings адаптирован в мобильной версии
+    Можно выделить и скопировать текст кода в игре в мобильной версии
   actual-result: |
-    Текст в разделе Settings не адаптирован в мобильной версии: не помещается в поля полностью.
+    Нельзя выделить и скопировать текст кода в игре в мобильной версии.
 ----
 
 
@@ -213,4 +209,31 @@ https://github.com/hexlet-codebattle/codebattle/issues/1267
     Текст в разделе Settings адаптирован в мобильной версии
   actual-result: |
     Текст в разделе Settings не адаптирован в мобильной версии: не помещается в поля полностью.
+
+- summary: |
+    Значения в разделе Create a new tournament выходят за рамки полей в мобильной версии
+  environment: |
+    Google Chrome   Версия 115.0.5735.124 (Официальная сборка), (64 бит)
+    iPhone 14
+  steps-to-reproduce: |
+    1. Зайти на страницу https://codebattle.hexlet.io/
+    2. Авторизоваться
+    3. Нажать на кнопку профиля и выбрать 'Tournaments'
+  expected-result: |
+    Поля в разделе Create a new tournament адаптированы в мобильной версии
+  actual-result: |
+    Поля в разделе Create a new tournament не адаптированы в мобильной версии: значения в 'Starts at' выходят за рамки полей.
+
+- summary: |
+    Раздел Lobby/Tournaments/Completed Game не адаптирован в мобильной версии
+  environment: |
+    Google Chrome   Версия 115.0.5735.124 (Официальная сборка), (64 бит)
+    iPhone 14
+  steps-to-reproduce: |
+    1. Зайти на страницу https://codebattle.hexlet.io/
+    2. Авторизоваться
+  expected-result: |
+    Раздел Lobby/Tournaments/Completed Game адаптирован в мобильной версии
+  actual-result: |
+    Раздел Lobby/Tournaments/Completed Game не адаптирован в мобильной версии: для просмотра необходимо скроллить его по горизонтали.
 
