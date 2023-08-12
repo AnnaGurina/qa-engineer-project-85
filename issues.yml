@@ -12,19 +12,15 @@ issues:
   - url: "https://github.com/hexlet-codebattle/codebattle/issues/1218"
   Окно со смайлами в чате вылезает за экран (мобильная версия)
   - url: "https://github.com/hexlet-codebattle/codebattle/issues/1290"
-  - url: "_"
-  - url: "_"
-  - url: "_"
+  Нет адаптации на мобильных устройствах на страничке профиля, в разделе статистики
+  - url: "https://github.com/hexlet-codebattle/codebattle/issues/1495"
+  Текст не помещается в полях формы в Settings
+  - url: "https://github.com/hexlet-codebattle/codebattle/issues/1511"
+  Значения выходят за поля формы. Tournament
+  - url: "https://github.com/hexlet-codebattle/codebattle/issues/1512"
   - url: "_"
   
 ---
-2. Bug: Нет адаптации на мобильных устройствах на страничке профиля, в разделе статистики #1495
-Диаграмма
-https://github.com/hexlet-codebattle/codebattle/issues/1495
-
-3. Bug: Текст не помещается в полях формы в Settings #1511
-https://github.com/hexlet-codebattle/codebattle/issues/1511
-
 4. Bug: Значения выходят за поля формы #1512 Tournament
 https://github.com/hexlet-codebattle/codebattle/issues/1512
 
@@ -36,21 +32,18 @@ https://github.com/hexlet-codebattle/codebattle/issues/1441
 
 ---
 - summary: |
-    Окно со смайлами в чатах на главной и в игре не адаптировано в мобильной версии
+    Значения в разделе Tournaments выходят за рамки полей в мобильной версии
   environment: |
     Google Chrome   Версия 115.0.5735.124 (Официальная сборка), (64 бит)
     iPhone 14
   steps-to-reproduce: |
     1. Зайти на страницу https://codebattle.hexlet.io/
     2. Авторизоваться
-    3. Нажать на кнопку смайлов в чате на главной
-    4. Нажать 'Create a game' (тип with a bot)
-    5. Нажать 'Create battle'
-    5. Нажать на кнопку смайлов в чате в игре
+    3. Нажать на кнопку профиля и выбрать 'Settings'
   expected-result: |
-    Окно со смайлами в чатах на главной и в игре целиком отображается на экране 
+    Текст в разделе Settings адаптирован в мобильной версии
   actual-result: |
-    Окно со смайлами в чатах на главной и в игре выходит за пределы экрана.
+    Текст в разделе Settings не адаптирован в мобильной версии: не помещается в поля полностью.
 ----
 
 
@@ -191,3 +184,33 @@ https://github.com/hexlet-codebattle/codebattle/issues/1267
     Окно со смайлами в чатах на главной и в игре целиком отображается на экране 
   actual-result: |
     Окно со смайлами в чатах на главной и в игре выходит за пределы экрана.
+
+- summary: |
+    Диаграмма в разделе статистика профиля не адаптирована в мобильной версии
+  environment: |
+    Google Chrome   Версия 115.0.5735.124 (Официальная сборка), (64 бит)
+    iPhone 14
+  steps-to-reproduce: |
+    1. Зайти на страницу https://codebattle.hexlet.io/
+    2. Авторизоваться
+    3. Нажать на кнопку профиля и выбрать 'My profile'
+    4. Открыть раздел 'Statistics' 
+  expected-result: |
+    Диаграмма в разделе статистика профиля адаптирована в мобильной версии 
+  actual-result: |
+    Диаграмма в разделе статистика профиля не адаптирована в мобильной версии: текст и значения искажены или отображены не полностью.
+
+- summary: |
+    Текст в разделе Settings не адаптирован в мобильной версии
+  environment: |
+    Google Chrome   Версия 115.0.5735.124 (Официальная сборка), (64 бит)
+    iPhone 14
+  steps-to-reproduce: |
+    1. Зайти на страницу https://codebattle.hexlet.io/
+    2. Авторизоваться
+    3. Нажать на кнопку профиля и выбрать 'Settings'
+  expected-result: |
+    Текст в разделе Settings адаптирован в мобильной версии
+  actual-result: |
+    Текст в разделе Settings не адаптирован в мобильной версии: не помещается в поля полностью.
+
