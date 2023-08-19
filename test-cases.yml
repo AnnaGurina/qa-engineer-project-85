@@ -5,10 +5,10 @@
 
 возможность создать параллельную игру
 возможность отправить инвайт при незаконченной игре
+возможность реметч
 
+проигрыш из-за победы соперника
 
-проигрыш
-возможность сдаться. 
 
 --- 
 - summary: |
@@ -183,7 +183,7 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/#lobby. Пользователь авторизован
   test-data: |
-    Game Type = With a bot. Task = rect_area. Code = return width * length;
+    Game Type = With a bot. Task = rect_area. Code = return width * length
   steps:
     - Нажать 'Create a game'
     - Выбрать тип игры и задание, остальные параметры оставить по умолчанию
@@ -194,13 +194,13 @@
     Отображается окно, сообщающее о победе. В окне тестов появилось сообщение 'All tests passed'
 
 - summary: |
-    Проверка процесса определения победы в игре
+    Проверка проигрыша в случае, когда соперник быстрее написал и проверил верный код
   requirement: |
     Игра завершается проигрышем, если противник быстрее написал и проверил верный код
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/#lobby. Пользователь авторизован
   test-data: |
-    Game Type = With a bot. Task = rect_area. Code = return width * length;
+    Game Type = With a bot. Task = rect_area. Code = return width * length
   steps:
     - Нажать 'Create a game'
     - Выбрать тип игры и задание, остальные параметры оставить по умолчанию
@@ -210,22 +210,21 @@
   expected-result: |
     Отображается окно, сообщающее о победе. В окне тестов появилось сообщение 'All tests passed'
     
-    - summary: |
-    Проверка процесса определения победы в игре
+- summary: |
+    Проверка проигрыша в случае использования опции "Сдаться"
   requirement: |
     Игра завершается проигрышем, если выбрать опцию "Сдаться"
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/#lobby. Пользователь авторизован
   test-data: |
-    Game Type = With a bot. Task = rect_area. Code = return width * length;
+    Game Type = With a bot. Task = rect_area
   steps:
     - Нажать 'Create a game'
     - Выбрать тип игры и задание, остальные параметры оставить по умолчанию
     - Нажать 'Create battle'
-    - Дописать правильную недостающую часть кода
-    - Нажать 'Check solution' 
+    - Нажать иконку красного флажка 'Give Up'
   expected-result: |
-    Отображается окно, сообщающее о победе. В окне тестов появилось сообщение 'All tests passed'
+    После нажатия 'Give Up' отображается окно, сообщающее о проигрыше. Под кнопкой 'Open History' появилось сообщение 'Your opponent has won the game'
     
 - summary: |
     Проверка доступности языков для игры на выбор: JavaScript, PHP, Python и Ruby
